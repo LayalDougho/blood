@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\NeedBloodController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BloodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('donor');
+
+Route::get('/welcome',function(){
+    return view('welcome');
 });
+Route::get('/blood',[BloodController::class, 'create'])->name('blood.create');
+Route::post('/blood/store',[BloodController::class,'store'])->name('blood.create');
+Route::resource('blood',BloodController::class);
+
+Route::resource('needBlood',NeedBloodController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

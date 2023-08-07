@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="flex justify-center">
-    <form action="{{route('blood.store')}}" method="post" class="form bg-white p-6 border-1">
+    <h1>Donation Form</h1>
+    <form action="{{route('needBlood.store')}}" method="post" class="form bg-white p-6 border-1">
         @csrf
         <div>
             <label for="first_name"> First Name</label>
@@ -32,6 +33,11 @@
 
             </select>
         </div>
+        <div>
+            <label for="Required_quantity">Phone Number</label>
+            <br>
+            <input id="Required_quantity" name="Required_quantity" type="number">
+        </div>
 
         <div>
             <label for="location">Location</label>
@@ -47,9 +53,9 @@
         </div>
 
         <div>
-            <label for="phone_number">Phone Number</label>
+            <label for="Required_quantity">Required Quantity</label>
             <br>
-            <input id="phone_number" name="phone_number" type="text">
+            <input id="Required_quantity" name="Required_quantity" type="number">
         </div>
 
         <div>
